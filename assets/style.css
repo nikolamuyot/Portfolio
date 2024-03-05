@@ -64,22 +64,36 @@ section h2 {
   margin-bottom: 1em; /* Add some space below the section title */
 }
 
-.project {
-  margin: 10px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-#about {
-  background: #f9f9f9; /* Light background for the About section */
+#work {
+  text-align: center; /* Center-align the content */
+  padding: 2rem 0; /* Add padding for spacing */
 }
 
 #work img {
   width: 100%; /* Make images in the Work section span the full container width */
   height: auto; /* Keep the image aspect ratio */
   margin-bottom: 1em; /* Add some space below each image */
+}
+
+.project {
+  margin-bottom: 2rem; /* Add space between projects */
+}
+
+.project img {
+  width: 100%; /* Adjust width as necessary */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 300px; /* Limit the size of the image */
+}
+
+.project h3 {
+  margin-top: 0.5rem; /* Space between image and title */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#about {
+  background: #f9f9f9; /* Light background for the About section */
 }
 
 / #contact form {
