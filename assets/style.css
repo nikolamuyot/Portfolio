@@ -9,11 +9,39 @@ nav ul,
   display: flex;
 }
 
-nav ul {
+nav {
+  background: #333; /* Dark background color */
+  color: #fff; /* Light text color */
+  padding: 1em; /* Add some padding around the navigation */
+  position: sticky; /* Keep the nav bar at the top of the page */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it stays above other content */
   justify-content: space-around;
 }
 
-.aang {
+nav ul {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Align items in a row */
+  justify-content: center; /* Center align the navigation items */
+  gap: 20px; /* Add some space between navigation items */
+}
+
+nav a {
+  color: #fff; /* Light text color for links */
+  text-decoration: none; /* Remove underlines from links */
+  font-weight: bold; /* Make the font a bit bolder */
+}
+
+nav a:hover,
+nav a:focus {
+  color: #3aadde; /* Change color on hover/focus for visual feedback */
+}
+
+nav a.active {
+  border-bottom: 2px solid #4caf50; /* Highlight the active link */
+}
+
+.Selfie {
   width: 100px; /* Sets the width of the image */
   height: 100px; /* Sets the height of the image */
   object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
@@ -25,11 +53,39 @@ nav ul {
   justify-content: center;
 }
 
+section {
+  padding: 2em 0; /* Add some vertical padding to each section */
+  margin: 0 auto; /* Center the content */
+  max-width: 800px; /* Don't let the content stretch too wide */
+}
+
+section h2 {
+  text-align: center; /* Center-align section titles */
+  margin-bottom: 1em; /* Add some space below the section title */
+}
+
 .project {
   margin: 10px;
 }
 
-.featured {
+html {
+  scroll-behavior: smooth;
+}
+
+#about {
+  background: #f9f9f9; /* Light background for the About section */
+}
+
+#work img {
+  width: 100%; /* Make images in the Work section span the full container width */
+  height: auto; /* Keep the image aspect ratio */
+  margin-bottom: 1em; /* Add some space below each image */
+}
+
+/ #contact form {
+  // Add styles for your contact form here, if you have one //
+}
+* / .featured {
   flex: 2 1 300px; /* Make the featured project larger */
 }
 
