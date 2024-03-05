@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav ul,
+.projects {
+  display: flex;
+}
+
+nav ul {
+  justify-content: space-around;
+}
+
+.aang {
+  width: 100px; /* Sets the width of the image */
+  height: 100px; /* Sets the height of the image */
+  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+  border-radius: 50%; /* Optional: rounds the corners for a circular profile picture */
+}
+
+.projects {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  margin: 10px;
+}
+
+.featured {
+  flex: 2 1 300px; /* Make the featured project larger */
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
