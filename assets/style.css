@@ -1,97 +1,148 @@
-body {
-  display: flex;
-  flex-direction: column;
+:root {
+  --blue: #002244; /* Example blue color */
+  --white: #ffffff;
+  --container-padding: 30px;
 }
 
+.container {
+  padding: var(--container-padding);
+}
+
+*,
+html,
+body,
 header,
-nav ul,
-.projects {
-  display: flex;
-}
-
-nav {
-  background: #333; /* Dark background color */
-  color: #fff; /* Light text color */
-  padding: 1em; /* Add some padding around the navigation */
-  position: sticky; /* Keep the nav bar at the top of the page */
-  top: 0; /* Stick to the top */
-  z-index: 1000; /* Ensure it stays above other content */
-  justify-content: space-around;
-}
-
-nav ul {
-  list-style: none; /* Remove default list styling */
-  display: flex; /* Align items in a row */
-  justify-content: center; /* Center align the navigation items */
-  gap: 20px; /* Add some space between navigation items */
-}
-
-nav a {
-  color: #fff; /* Light text color for links */
-  text-decoration: none; /* Remove underlines from links */
-  font-weight: bold; /* Make the font a bit bolder */
-}
-
-nav a:hover,
-nav a:focus {
-  color: #3aadde; /* Change color on hover/focus for visual feedback */
-}
-
-nav a.active {
-  border-bottom: 2px solid #4caf50; /* Highlight the active link */
-}
-
-.Selfie {
-  width: 100px; /* Sets the width of the image */
-  height: 100px; /* Sets the height of the image */
-  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
-  border-radius: 50%; /* Optional: rounds the corners for a circular profile picture */
-}
-
-.projects {
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-section {
-  padding: 2em 0; /* Add some vertical padding to each section */
-  margin: 0 auto; /* Center the content */
-  max-width: 800px; /* Don't let the content stretch too wide */
-}
-
-section h2 {
-  text-align: center; /* Center-align section titles */
-  margin-bottom: 1em; /* Add some space below the section title */
-}
-
-.project {
-  margin: 10px;
+nav,
+section,
+.project,
+.contact-links a {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-#about {
-  background: #f9f9f9; /* Light background for the About section */
+body {
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
 
-#work img {
-  width: 100%; /* Make images in the Work section span the full container width */
-  height: auto; /* Keep the image aspect ratio */
-  margin-bottom: 1em; /* Add some space below each image */
+header,
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/ #contact form {
-  // Add styles for your contact form here, if you have one //
-}
-* / .featured {
-  flex: 2 1 300px; /* Make the featured project larger */
+nav ul,
+.contact-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
 }
 
-/* Responsive layout */
+nav a,
+.contact-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus,
+.contact-links a:hover,
+.contact-links a:focus {
+  color: #3aadde;
+}
+
+.selfie {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+section,
+#contact {
+  padding: 2em 0;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+h1,
+h2,
+p,
+.project h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.project {
+  position: relative;
+  width: 30ww; /* Adjusted for potential typo */
+  overflow: hidden;
+  margin: 15px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.avatar-wave {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* This will cover the container with the image without distorting its aspect ratio, but it might crop the image */
+}
+
+.first-project img {
+  width: 110%; /* Increase the width of the image */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.project img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+  border: 0;
+}
+
+.project:hover img {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.project:hover h3 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
+  }
+
+  #work a,
+  .first-app img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --container-padding: 40px; /* Increase padding for larger screens */
   }
 }
